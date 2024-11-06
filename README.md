@@ -54,4 +54,62 @@ git log --oneline --all
 ```
 ![Скриншот истории операций для каждой ветки](photo/history_commits.jpg)
 
+### Шаг 8: Просмотр последних изменений
+Посмотрены последние изменения:
 
+```bash
+git log -p -1
+```
+![Скриншот просмотра последних изменений](photo/last_commit.jpg)
+
+### Шаг 9: Слияние ветки и разрешение конфликта
+Создана и слита ветка feature в master, конфликтов не возникло:
+
+```bash
+git checkout -b feature
+# Внесены изменения
+git add .
+git commit -m "Внес изменения в feature"
+git checkout master
+git merge feature
+```
+![Скриншот слияния веток](photo/merge.jpg)
+
+### Шаг 10: Удаление побочной ветки
+Удалена ветка feature после слияния:
+
+```bash
+git branch -d feature
+```
+
+### Шаг 11: Сделаны несколько коммитов с комментариями
+Внесены изменения в файл example.txt (поочерёдно добавил две строки) и сделаны коммиты:
+
+```bash
+git add example.txt
+git commit -m "Добавлена новая строка в файл example.txt"
+git add example.txt
+git commit -m "Добавил ещё одну строку(второй коммит).txt"
+```
+![Скриншот создания коммитов](photo/commits.jpg)
+
+### Шаг 12: Откат коммита
+Выполнен откат последнего коммита:
+
+```bash
+git add example.txt
+git commit -m "Добавлена новая строка в файл example.txt"
+git add example.txt
+git commit -m "Добавил ещё одну строку(второй коммит).txt"
+```
+![Скриншот отката коммита](photo/otkat_commit.jpg)
+
+
+### Шаг 13: Создание ветки для отчета
+Создана ветка report для оформления отчета:
+
+```bash
+git branch report
+git checkout report
+```
+![Скриншот создания ветки для отчёта](photo/report_branch.jpg)
