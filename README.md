@@ -113,3 +113,64 @@ git branch report
 git checkout report
 ```
 ![Скриншот создания ветки для отчёта](photo/report_branch.jpg)
+
+## Лог команд
+
+```bash
+# Настройка имени пользователя и email
+git config --global user.name "4314 Плюснин В.Д."
+git config --global user.email "vpd658@mail.ru"
+
+# Клонирование форкнутого репозитория
+git clone https://github.com/Kurtyanik/LR6
+
+# Переключение в директорию проекта
+cd LR6
+
+# Получение истории операций для всех веток
+git log --oneline --all
+
+# Просмотр последних изменений
+git log -p -1
+
+# Создание новой ветки
+git branch feature
+
+# Переключение на новую ветку
+git checkout feature
+
+# Внесение изменений, добавление их в индекс и коммит
+git add example.txt
+git commit -m "Добавил новую строку в example.txt"
+
+# Переключение обратно на мастер и слияние веток
+git checkout master
+git merge feature
+
+# Удаление побочной ветки после слияния
+git branch -d feature
+
+# Создание еще нескольких коммитов с комментариями
+git add example.txt
+git commit -m "Добавлена новая строка в файл example.txt"
+git add example.txt
+git commit -m "Добавил ещё одну строку(второй коммит).txt"
+
+# Откат последнего коммита
+git revert HEAD
+
+# Создание ветки для отчета и переключение на нее
+git branch report
+git checkout report
+
+# Получение истории операций в отформатированном виде
+git log --pretty=format:"%h %ad | %s%d [%an]" --date=short
+
+# Отправка изменений на удаленный репозиторий
+git push origin report
+```
+
+### Пояснение:
+Этот лог команд показывает весь процесс выполнения лабораторной работы, включая настройку Git, создание веток, коммиты, слияние, откат коммитов и отправку изменений на GitHub.
+
+
